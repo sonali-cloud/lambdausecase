@@ -1,8 +1,34 @@
-var express = require('express');
-var app = express();
 
-app.get('/',function(req,res) {
-  res.send("Hello World");
-});
+let response;
+ 
+exports.lambdaHandler = async (event, context) => {
 
-app.listen(4000);
+ 
+try {
+
+// const ret = await axios(url);
+ 
+response = {
+ 
+'statusCode': 200,
+ 
+'body': JSON.stringify({
+ 
+message: 'hello world',
+
+// location: ret.data.trim()
+
+})
+ 
+}
+
+} catch (err) {
+
+console.log(err);
+
+return err;
+}
+
+return response
+ 
+};
