@@ -1,0 +1,26 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+       nodejs: $runtimeVersion
+  build:
+    commands:
+      - echo Build started on `date`
+      - pip install --upgrade pip
+      - pip install pipenv --user
+      - pip install awscli aws-sam-cli
+ #     - sam package --template-file template.yaml --s3-bucket idexceldemo-sam --output-template-file packaged.yaml
+      - sam package --template-file $samTemplateName --s3-bucket $s3BucketName --output-template-file $packagedTemplateName
+  post_build:
+    commands:
+      - echo uploading the templates to S3
+      - zip -r sam.tar.zip $samTemplateName $packagedTemplateName
+     # - aws s3 cp $samTemplateName s3://samtemplateversions/$samTemplateName && aws s3 cp $packagedTemplateName s3://samtemplateversions/$packagedTemplateName
+      - current_time=$(date "+%Y.%m.%d-%H.%M.%S") 
+      - aws s3 cp sam.tar.zip s3://samtemplateversions/$current_time.sam.tar.zip
+      - echo Build completed on `date`
+artifacts:
+  type: zip
+  files:
+    - '**/*'
+  discard-paths: yes
