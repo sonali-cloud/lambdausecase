@@ -15,7 +15,7 @@ module.exports.handler = async event => {
 };const playerList = () => {
   return [
     { name: "Hima", number: 22 },
-    { name: "Sonal", number: 11 },
-    { name: "Pradeeptha", number: 33 }
+    { name: "Sonal", number: 23 },
+    { name: "Pradeeptha", number: 24 }
   ];
 };
