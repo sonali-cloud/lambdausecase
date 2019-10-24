@@ -1,4 +1,0 @@
-# lambdausecase
-
-hello
-hi
