@@ -9,15 +9,13 @@ module.exports.handler = async event => {
       2
     )
   };
+
+ 
+
 };const playerList = () => {
   return [
-    { name: "Manoj", number: 23 },
-    { name: "Rajesh", number: 11 },
-    { name: "Baman", number: 2 }
+    { name: "Hima", number: 22 },
+    { name: "Sonal", number: 11 },
+    { name: "Pradeeptha", number: 33 }
   ];
 };
-
-
-
-
-
