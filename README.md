@@ -1,3 +1,0 @@
-# lambdausecase
-
-hi
