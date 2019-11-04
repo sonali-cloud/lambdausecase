@@ -8,6 +8,6 @@ exports.splhandler = async function(event) {
       }).on('error', (e) => {
         reject(Error(e))
       })
-    })
-  
+    
+  return promise
 }
