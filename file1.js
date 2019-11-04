@@ -9,5 +9,5 @@ exports.splhandler = async function(event) {
         reject(Error(e))
       })
     })
-  return promise
+  
 }
